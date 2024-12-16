@@ -18,6 +18,7 @@
   "common.update.failed.message": "Update Failed",
 
   "common.text.domain": "Domain",
+  "common.text.crontab": "cron expression",
   "common.text.domain.empty": "No Domain",
   "common.text.ip": "IP Address",
   "common.text.ip.empty": "No IP address",
@@ -48,6 +49,7 @@
   "common.errmsg.email_empty": "Please enter email",
   "common.errmsg.email_duplicate": "Email already exists",
   "common.errmsg.domain_invalid": "Please enter domain",
+  "common.errmsg.crontab_invalid": "Please enter crontab",
   "common.errmsg.host_invalid": "Please enter the correct domain name or IP",
   "common.errmsg.ip_invalid": "Please enter IP",
   "common.errmsg.url_invalid": "Please enter a valid URL",

@@ -16,6 +16,7 @@
   "domain.deploy_forced": "强行部署",
 
   "domain.props.expiry": "有效期限",
+  "domain.props.crontab": "crontab",
   "domain.props.expiry.date1": "有效期 {{date}} 天",
   "domain.props.expiry.date2": "{{date}} 到期",
   "domain.props.last_execution_status": "最近执行状态",

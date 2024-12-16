@@ -16,6 +16,7 @@
   "domain.deploy_forced": "Force Deploy",
 
   "domain.props.expiry": "Validity Period",
+  "domain.props.crontab": "crontab",
   "domain.props.expiry.date1": "Valid for {{date}} days",
   "domain.props.expiry.date2": "Expiry on {{date}}",
   "domain.props.last_execution_status": "Last Execution Status",

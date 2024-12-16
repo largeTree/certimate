@@ -18,6 +18,7 @@ type StringListProps = {
 };
 
 const titles: Record<string, string> = {
+  crontab: "common.text.crontab",
   domain: "common.text.domain",
   ip: "common.text.ip",
   dns: "common.text.dns",
@@ -131,7 +132,7 @@ const StringList = ({ value, className, onValueChange, valueType = "domain" }: S
 
 export default StringList;
 
-type ValueType = "domain" | "dns" | "host";
+type ValueType = "domain" | "dns" | "host" | "crontab";
 
 type StringEditProps = {
   value: string;
@@ -157,7 +158,12 @@ const StringEdit = ({ trigger, value, onValueChange, op = "add", valueType }: St
 
   const ipSchema = z.string().ip({ message: t("common.errmsg.ip_invalid") });
 
+  const crontabSchema = z.string().regex(/^(\d+|\*)( (\d+|\*)( (\d+|\*)( (\d+|\*)( (\d+|\*))?)?)?)?$/, {
+    message: t("common.errmsg.crontab_invalid"),
+  });
+
   const schedules: Record<ValueType, z.ZodString> = {
+    crontab: crontabSchema,
     domain: domainSchema,
     dns: ipSchema,
     host: ipSchema,

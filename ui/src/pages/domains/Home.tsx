@@ -189,6 +189,7 @@ const Home = () => {
             <div className="hidden sm:flex sm:flex-row text-muted-foreground text-sm border-b dark:border-stone-500 sm:p-2 mt-5">
               <div className="w-36">{t("common.text.domain")}</div>
               <div className="w-40">{t("domain.props.expiry")}</div>
+              <div className="w-40">{t("domain.props.crontab")}</div>
               <div className="w-32">{t("domain.props.last_execution_status")}</div>
               <div className="w-64">{t("domain.props.last_execution_stage")}</div>
               <div className="w-40 sm:ml-2">{t("domain.props.last_execution_time")}</div>
@@ -221,6 +222,9 @@ const Home = () => {
                       "---"
                     )}
                   </div>
+                </div>
+                <div className="sm:w-40 w-full pt-1 sm:pt-0 flex  items-center">
+                  {domain.crontab}
                 </div>
                 <div className="sm:w-32 w-full pt-1 sm:pt-0 flex items-center">
                   {domain.lastDeployedAt && domain.expand?.lastDeployment ? (

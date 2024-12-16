@@ -90,6 +90,7 @@ const Edit = () => {
       form.reset({
         id: domain.id,
         domain: domain.domain,
+        crontab: domain.crontab,
         email: domain.applyConfig?.email,
         access: domain.applyConfig?.access,
         keyAlgorithm: domain.applyConfig?.keyAlgorithm,
@@ -301,13 +302,13 @@ const Edit = () => {
                     name="crontab"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="flex justify-between w-full">
-                          <div>{t("domain.application.form.crontab.label")}</div>
-                        </FormLabel>
-                          <Input value={field.value} onChange={(e) => {
-                            form.setValue('crontab', e.target.value?.trim());
-                          }}></Input>
-                        
+                        <StringList 
+                          value={field.value}
+                          valueType="crontab"
+                          onValueChange={(domain: string) => {
+                            form.setValue("crontab", domain);
+                          }}
+                        />
                         <FormMessage />
                       </FormItem>
                     )}
