@@ -33,6 +33,7 @@
   "domain.application.form.email.placeholder": "Please select email",
   "domain.application.form.email.add": "Add Email",
   "domain.application.form.email.list": "Email List",
+  "domain.application.form.crontab.label": "Crontab",
   "domain.application.form.access.label": "DNS Provider Authorization Configuration",
   "domain.application.form.access.placeholder": "Please select DNS provider authorization configuration",
   "domain.application.form.access.list": "Provider Authorization Configurations",

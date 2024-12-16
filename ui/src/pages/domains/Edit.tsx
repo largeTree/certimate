@@ -63,6 +63,7 @@ const Edit = () => {
     access: z.string().regex(/^[a-zA-Z0-9]+$/, {
       message: "domain.application.form.access.placeholder",
     }),
+    crontab: z.string().default("0 0 * * *"),
     keyAlgorithm: z.string().optional(),
     nameservers: z.string().optional(),
     timeout: z.number().optional(),
@@ -75,6 +76,7 @@ const Edit = () => {
       id: "",
       domain: "",
       email: "",
+      crontab: "0 0 * * *",
       access: "",
       keyAlgorithm: "RSA2048",
       nameservers: "",
@@ -103,7 +105,7 @@ const Edit = () => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     const req: Domain = {
       id: data.id as string,
-      crontab: "0 0 * * *",
+      crontab: data.crontab,
       domain: data.domain,
       email: data.email,
       access: data.access,
@@ -288,6 +290,24 @@ const Edit = () => {
                           </Select>
                         </FormControl>
 
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* 定时任务表达式 */}
+                  <FormField
+                    control={form.control}
+                    name="crontab"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex justify-between w-full">
+                          <div>{t("domain.application.form.crontab.label")}</div>
+                        </FormLabel>
+                          <Input value={field.value} onChange={(e) => {
+                            form.setValue('crontab', e.target.value?.trim());
+                          }}></Input>
+                        
                         <FormMessage />
                       </FormItem>
                     )}

@@ -29,6 +29,7 @@
   "domain.application.form.domain.added.message": "域名添加成功",
   "domain.application.form.domain.changed.message": "域名编辑成功",
   "domain.application.form.email.label": "邮箱",
+  "domain.application.form.crontab.label": "cron表达式",
   "domain.application.form.email.tips": "（申请证书需要提供邮箱）",
   "domain.application.form.email.placeholder": "请选择邮箱",
   "domain.application.form.email.add": "添加邮箱",
